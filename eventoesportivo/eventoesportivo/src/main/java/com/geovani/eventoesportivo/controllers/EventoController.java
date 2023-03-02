@@ -3,6 +3,7 @@ package com.geovani.eventoesportivo.controllers;
 import com.geovani.eventoesportivo.dto.EventosDto;
 import com.geovani.eventoesportivo.service.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,9 @@ public class EventoController {
     }
 
     @PostMapping
-    public EventosDto create(@RequestBody EventosDto eventosDto) throws Exception {
-        return eventoService.create(eventosDto);
+    public ResponseEntity<EventosDto> create(@RequestBody EventosDto eventosDto) throws Exception {
+        var cria = eventoService.create(eventosDto);
+        return new ResponseEntity<>(cria, HttpStatus.CREATED);
     }
 
     @PutMapping

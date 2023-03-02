@@ -23,5 +23,4 @@ public class DozzerMapperConfig {
         }
         return destinationObjects;
     }
-
 }
