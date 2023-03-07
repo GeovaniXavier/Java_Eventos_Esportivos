@@ -1,44 +1,39 @@
 package com.geovani.eventoesportivo.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.geovani.eventoesportivo.entity.Evento;
-import com.geovani.eventoesportivo.entity.Inscricao;
 import com.geovani.eventoesportivo.entity.Usuario;
 import com.github.dozermapper.core.Mapping;
 
 public class InscricaoDto {
 
     @Mapping("usuario")
-    private Usuario usuarioId;
+    private Usuario usuario;
 
     @Mapping("evento")
-    private Evento eventoId;
+    private Evento evento;
 
 
     public InscricaoDto() {
     }
 
-    public InscricaoDto(Usuario usuarioId, Evento eventoId) {
-        this.usuarioId = usuarioId;
-        this.eventoId = eventoId;
+    public InscricaoDto(Usuario usuario, Evento evento) {
+        this.usuario = usuario;
+        this.evento = evento;
     }
 
-    public Usuario getUsuarioId() {
-        return usuarioId;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioId(Usuario usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public Evento getEventoId() {
-        return eventoId;
+    public Evento getEvento() {
+        return evento;
     }
 
-    public void setEventoId(Evento eventoId) {
-        this.eventoId = eventoId;
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
-
-       // http:localhost:8080?user=10?action=associate?event=10
-
-    }
+}

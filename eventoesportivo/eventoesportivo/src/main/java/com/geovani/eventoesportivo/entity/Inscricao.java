@@ -2,6 +2,8 @@ package com.geovani.eventoesportivo.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Inscricao {
 

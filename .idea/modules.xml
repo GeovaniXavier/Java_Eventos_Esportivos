@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java_Eventos_Esportivos.iml" filepath="$PROJECT_DIR$/.idea/Java_Eventos_Esportivos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eventoesportivo/eventoesportivo/eventoesportivo.iml" filepath="$PROJECT_DIR$/eventoesportivo/eventoesportivo/eventoesportivo.iml" />
+    </modules>
+  </component>
+</project>

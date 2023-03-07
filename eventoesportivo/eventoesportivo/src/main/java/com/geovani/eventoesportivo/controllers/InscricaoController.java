@@ -2,12 +2,12 @@ package com.geovani.eventoesportivo.controllers;
 
 import com.geovani.eventoesportivo.dto.InscricaoDto;
 import com.geovani.eventoesportivo.dto.InscricaoSaveDto;
-import com.geovani.eventoesportivo.entity.Inscricao;
 import com.geovani.eventoesportivo.repository.EventoRepository;
 import com.geovani.eventoesportivo.repository.InscricaoRepository;
 import com.geovani.eventoesportivo.repository.UsuarioRepository;
 import com.geovani.eventoesportivo.service.InscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,15 +35,9 @@ public class InscricaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Inscricao> save(@RequestBody InscricaoSaveDto inscricao) throws Exception {
-        var usu = usuarioRepository.findById(inscricao.getUsuarioId());
-        var even = eventoRepository.findById(inscricao.getEventoId());
-
-        Inscricao inscricao1 = new Inscricao(null, usu.get(), even.get());
-
-        var vo = inscricaoRepository.save(inscricao1);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<?> save(@RequestBody InscricaoSaveDto inscricaoSaveDto) throws Exception {
+        var cria = inscricaoService.save(inscricaoSaveDto);
+        return new ResponseEntity<>(cria, HttpStatus.CREATED);
     }
-
     //4. O usuário poderá convidar outros usuários para participar dos eventos.
 }
