@@ -1,6 +1,7 @@
 package com.geovani.eventoesportivo.controllers;
 
 import com.geovani.eventoesportivo.dto.InscricaoDto;
+import com.geovani.eventoesportivo.dto.InscricaoSaveDto;
 import com.geovani.eventoesportivo.entity.Inscricao;
 import com.geovani.eventoesportivo.repository.EventoRepository;
 import com.geovani.eventoesportivo.repository.InscricaoRepository;
@@ -34,9 +35,9 @@ public class InscricaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Inscricao> save(@RequestBody InscricaoDto inscricao) throws Exception {
-        var usu = usuarioRepository.findById(inscricao.getUsuarioId().getId());
-        var even = eventoRepository.findById(inscricao.getEventoId().getId());
+    public ResponseEntity<Inscricao> save(@RequestBody InscricaoSaveDto inscricao) throws Exception {
+        var usu = usuarioRepository.findById(inscricao.getUsuarioId());
+        var even = eventoRepository.findById(inscricao.getEventoId());
 
         Inscricao inscricao1 = new Inscricao(null, usu.get(), even.get());
 

@@ -42,5 +42,3 @@ public class InscricaoDto {
        // http:localhost:8080?user=10?action=associate?event=10
 
     }
-
-
